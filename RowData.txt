@@ -1,0 +1,30 @@
+User
+uid(P) uname pass fullname
+
+
+Admin
+id(P) name pass 
+
+
+
+Role 
+roll_id roll_name
+1	Admin
+2	User  
+
+
+Questionaries
+Qid(P) Question 
+
+
+
+
+Options
+Qid(F)  op1 op2 op3 op4
+
+
+
+ResponceCount 
+Qid(F)  op1count op2count op3count op4count
+
+
