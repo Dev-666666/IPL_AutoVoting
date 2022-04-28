@@ -1,0 +1,42 @@
+﻿@model IEnumerable<IPLVotingSystem.Models.Responces>
+
+@{
+    ViewData["Title"] = "ViewResponce";
+     Layout="~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h1>ViewResponce</h1>
+
+<p>
+    <a asp-action="Create">Show</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.QId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.QId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,40 +1,45 @@
-﻿@model IPLVotingSystem.Models.Userlist
+﻿@model IPLVotingSystem.Models.Users
 
 @{
     ViewData["Title"] = "Register";
+    Layout="~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Register</h1>
+<h1>Register Here.....</h1>
 
-<div class="container-fluid">
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Register">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="uname" class="control-label"></label>
-                <input asp-for="uname" class="form-control" />
-                <span asp-validation-for="uname" class="text-danger"></span>
+                <label asp-for="UName" class="control-label"></label>
+                <input asp-for="UName" class="form-control" />
+                <span asp-validation-for="UName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="pass" class="control-label"></label>
-                <input asp-for="pass" class="form-control" />
-                <span asp-validation-for="pass" class="text-danger"></span>
+                <label asp-for="RoleId" class="control-label"></label>
+                <input asp-for="RoleId" class="form-control" />
+                <span asp-validation-for="RoleId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="fullname" class="control-label"></label>
-                <input asp-for="fullname" class="form-control" />
-                <span asp-validation-for="fullname" class="text-danger"></span>
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FullName" class="control-label"></label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Register User" class="btn btn-primary" />
-          
             </div>
-                  <label>@ViewBag.Message</label>
+            <lable >@ViewBag.Message</lable>
         </form>
     </div>
 </div>
-</div>
+
 <div>
     <a asp-action="Index">Back to List</a>
 </div>

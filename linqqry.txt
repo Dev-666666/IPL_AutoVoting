@@ -1,0 +1,3 @@
+var qry=from q in question 
+	join o in options on q.qid=o.qid
+	select {............}

@@ -34,7 +34,9 @@ namespace IPLVotingSystem
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddMvc(options => options.EnableEndpointRouting = false);
             services.AddControllersWithViews();
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,11 +63,31 @@ namespace IPLVotingSystem
 
             app.UseEndpoints(endpoints =>
             {
+               
+           
+
+                endpoints.MapAreaControllerRoute(
+                  name: "admin",
+                  areaName: "admin",
+                  pattern: "admin/{controller=AdminUse}/{action=Index}");
+
+                endpoints.MapAreaControllerRoute(
+                 name: "admin",
+                 areaName: "admin",
+                 pattern: "admin/{controller=AdminUse}/{action=AddQuestionary}");
+
+                endpoints.MapAreaControllerRoute(
+                  name: "User",
+                  areaName:"User",
+                  pattern: "User/{controller=User}/{action}/{id?}");
+
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                 name: "default",
+                 pattern: "{controller=Home}/{action=Index}/{id?}");
+
                 endpoints.MapRazorPages();
             });
+           
         }
     }
 }

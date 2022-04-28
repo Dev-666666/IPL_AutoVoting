@@ -8,22 +8,26 @@ using Microsoft.EntityFrameworkCore;
 
 namespace IPLVotingSystem.Models
 {
-    [Table("userlist")]
-    public class Userlist
+    [Table("Users")]
+    public class Users
     {
         
         [Required]
         [Key]
-        public int uid{ get; set; }
+        public int UId{ get; set; }
         
         [Required(ErrorMessage ="Please Enter the Username")]
         [DataType(DataType.Text)]
-        public string uname { get; set; }
-        [Required(ErrorMessage ="Plese Enter the Password")]
+        [Display(Name ="User Name")]
+        public string UName { get; set; }
+   
+        [ForeignKey("UserRoles")]
+        public int RoleId { get; set; }
+        [Required(ErrorMessage = "Plese Enter the Password")]
         [DataType(DataType.Password)]
-        
-        public string  pass { get; set; }
+        public string  Password { get; set; }
+
         [Required]
-        public string fullname { get; set; }
+        public string FullName { get; set; }
     }
 }

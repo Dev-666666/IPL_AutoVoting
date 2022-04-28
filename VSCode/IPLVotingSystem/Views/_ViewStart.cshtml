@@ -1,3 +1,17 @@
-﻿@{
-    Layout = "_Layout";
+﻿@using Microsoft.AspNetCore.Http
+@{
+   Layout = " ";
 }
+@*@{  
+    string CurrentName = Convert.ToString(HttpContext..Request.RequestContext.RouteData.Values["Controller"]);  
+    dynamic Layout;  
+    switch (CurrentName)  
+    {  
+        case "admin":  
+            Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";  
+            break;  
+        default: 
+            Layout = "~/Views/Shared/_Layout.cshtml";  
+            break;  
+    }  
+}  *@

@@ -16,6 +16,15 @@ namespace IPLVotingSystem.Data
         {
         }
 
-       public DbSet<Userlist> Userlists { get; set; }
+        public DbSet<Users> users { get; set; }
+        public DbSet<Admins> admins { get; set; }
+        public DbSet<UserRoles> userRoles { get; set; }
+        public DbSet<Questionary> questionaries { get; set; }
+        public DbSet<Responces> responces { set; get; }
+        public DbSet<Options> options { get; set; }
+
+
+
+
     }
 }

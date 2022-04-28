@@ -1,5 +1,5 @@
 User
-uid(P) uname pass fullname
+uid(P) uname pass fullname add roll_id
 
 
 Admin
@@ -20,11 +20,11 @@ Qid(P) Question
 
 
 Options
-Qid(F)  op1 op2 op3 op4
+Qid(F) opid(P) op1 op2 op3 op4 
 
 
 
 ResponceCount 
-Qid(F)  op1count op2count op3count op4count
+Qid(F) userid(F)  opid
 
 

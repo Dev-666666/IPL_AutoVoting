@@ -1,0 +1,62 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ViewQuestions">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div>@ViewBag.user </div>
+            <div class="form-group">
+             <table>
+                 <tr>
+                     <td>
+                <label for ="question"> Question:</label></td></tr><tr><td>
+                <textarea id="question" name="question" rows="3" cols="80" readonly>fetch question here</textarea>
+                </td>
+                </tr>
+                </table>
+            </div>
+          <div class="form-check mb-2">
+          <input class="form-check-input" type="radio" name="exampleForm" id="radio2Example1" />
+          <label class="form-check-label" for="radio2Example1">
+          otipn1
+          </label>
+        </div>
+         <div class="form-check mb-2">
+          <input class="form-check-input" type="radio" name="exampleForm" id="radio2Example1" />
+          <label class="form-check-label" for="radio2Example1">
+          otipn2
+          </label>
+        </div>
+
+          <div class="form-check mb-2">
+          <input class="form-check-input" type="radio" name="exampleForm" id="radio2Example1" />
+          <label class="form-check-label" for="radio2Example1">
+          otipn3
+          </label>
+        </div>          
+         <div class="form-check mb-2">
+          <input class="form-check-input" type="radio" name="exampleForm" id="radio2Example1" />
+          <label class="form-check-label" for="radio2Example1">
+          otipn4
+          </label>
+        </div>
+
+         <div class="card-footer text-end">
+      <button type="submit" class="btn btn-primary">Submit Answer</button>
+    </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
