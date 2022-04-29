@@ -6,7 +6,7 @@
 
 <h1>ViewQuestionary</h1>
 
-<h2>Viewdata</h2>
+<form action="EditQuestionary">
        <table  class="table table-bordered table-dark">
          <thead class="thead-dark">Questionary</thead>
             <tr><th  scope="col">Question</th><th  scope="col">Option1</th><th  scope="col">Option2</th><th  scope="col">option3</th><th  scope="col">Option4</th></tr>
@@ -25,13 +25,14 @@
                <td>@op.option4</td>
 
                     }
-           }
-            </tr>
+           } <td>  </td>
+               <td>  @Html.ActionLink("Edit","EditQuestionary",new{qid=item.qId})</td>
+               <td>  @Html.ActionLink("Delete","DeletQuestionary",new{qid=item.qId})</td></tr>
         }
        
 
 </table>
-
+</form>
  @* <table  class="table table-bordered">
            <tb> @foreach(IPLVotingSystem.Models.Options op in (IEnumerable<IPLVotingSystem.Models.Options>)ViewData["olist"])
     {

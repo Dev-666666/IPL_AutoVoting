@@ -1,33 +1,39 @@
-﻿
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
 
 @{
-    ViewData["Title"] = "AddQuestionary";
+    ViewData["Title"] = "DeletQuestionary";
      Layout="~/Areas/admin/Views/Shared/_Layout.cshtml";
 }
 
-<h1>AddQuestionary</h1>
+<h1>DeletQuestionary</h1>
 
 
 <div class="row">
     <div class="col-md-4">
-        <form method="post" action="EditQuestionary">
+        <form method="post" action="DeletQuestionary">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             
             <div class="form-group">
              <table>
-                 <thead>Enter the Question Id To Edit</thead>
+     
                 <tr>
-                    <td>QId</td><td><input type="hidden"  name="txtquestionid" value="@ViewBag.QuestionId"/></td>
+                  <td><input type="hidden"  name="txtquestionid" value="@ViewBag.QuestionId"/></td>
                 </tr>
                 <tr>
                 <td><label for ="question">Question</label></td></tr>
                 <tr>
                 <td>
-                <textarea id="question" name="question" rows="2" cols="90" value="">@ViewBag.Question</textarea>
+                <textarea id="question" name="question" rows="2" cols="90" readonly>@ViewBag.Question</textarea>
                 </td>
                 </tr>
                 <tr><td>Edit Options</td></tr>
-                <tr><td>Option1&nbsp;<input type="text" name="txtop1" value="@ViewBag.Option1"/></td></tr>
+                <tr><td>Option1&nbsp;<input type="text" name="txtop1" value="@ViewBag.Option1" readonly/></td></tr>
                  <tr><td>Option2&nbsp;<input type="text" name="txtop2" value="@ViewBag.Option2"/></td></tr>
                   <tr><td>Option3&nbsp;<input type="text" name="txtop3" value="@ViewBag.Option3"/></td></tr>
                  <tr><td>Option4&nbsp;<input type="text" name="txtop4" value="@ViewBag.Option4"/></td></tr>
@@ -39,7 +45,7 @@
         
           
             <div class="form-group">
-                <input type="submit" value="Add" class="btn btn-primary" /> <h6>@ViewBag.Msg</h6>
+                <input type="submit" value="Delete" class="btn btn-primary" /> <h6>@ViewBag.Msg</h6>
             </div>
         </form>
     </div>
