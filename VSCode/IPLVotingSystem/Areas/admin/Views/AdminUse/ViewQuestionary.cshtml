@@ -2,12 +2,14 @@
 
 @{
     ViewData["Title"] = "ViewQuestionary";
+ 
+   Layout="~/Areas/admin/Views/Shared/_Layout.cshtml";
 }
 
 <h1>ViewQuestionary</h1>
 
 <form action="EditQuestionary">
-       <table  class="table table-bordered table-dark">
+       <table  class="table .table-bordered table-dark">
          <thead class="thead-dark">Questionary</thead>
             <tr><th  scope="col">Question</th><th  scope="col">Option1</th><th  scope="col">Option2</th><th  scope="col">option3</th><th  scope="col">Option4</th></tr>
             @foreach(IPLVotingSystem.Models.Questionary item in (IEnumerable<IPLVotingSystem.Models.Questionary>)ViewData["qlist"])
@@ -33,55 +35,4 @@
 
 </table>
 </form>
- @* <table  class="table table-bordered">
-           <tb> @foreach(IPLVotingSystem.Models.Options op in (IEnumerable<IPLVotingSystem.Models.Options>)ViewData["olist"])
-    {
-        
-    <tr>
-     <td class="bg-primary">@op.option1</td>
-     <td class="bg-success">@op.option2</td>
-      <td class="bg-primary">@op.option3</td>
-     <td class="bg-success">@op.option4</td>
-    </tr>
 
-}
-</tb>
-</table>*@
-@*<table class="table table-bordered table-dark">
-    <thead class="thead-dark"> 
-        <tr>
-      <th scope="col">QuestionId</th>
-      <th scope="col">Question</th>
-      <th scope="col">Option1</th>
-      <th scope="col">Option2</th>
-     <th scope="col">Option3</th>
-     <th scope="col">Option4</th>
-      </tr>    
-      
-       <tb> @foreach(IPLVotingSystem.Models.Questionary item1 in (IEnumerable<IPLVotingSystem.Models.Questionary>)ViewData["qlist"])
-  {   
-     <tr>
-        
-     <td>@item1.qId</td>
-     <td>@item1.Question</td>
-       @foreach(IPLVotingSystem.Models.Options op1 in (IEnumerable<IPLVotingSystem.Models.Options>)ViewData["olist"])
-           {
-           
-           if(@item.qId==op.qId)
-                    {
-            <td>@op1.option1</td>
-     <td>@op1.option2</td>
-     <td>@op1.option3</td>
-     <td>@op1.option4</td>
-    </tr>
-
-  
-  </thead>
-  <tbody>
-  
-    
-  </tbody>
-  }}
-</table>
-
-*@
